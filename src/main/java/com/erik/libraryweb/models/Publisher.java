@@ -1,10 +1,14 @@
 package com.erik.libraryweb.models;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Publisher {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
     private String name;
@@ -12,6 +16,8 @@ public class Publisher {
     private String city;
     private String plz;
 
+    @OneToMany
+    @JoinColumn(name = "publsher_id")
     Set<Book> books = new HashSet<>();
 
     public Publisher() {

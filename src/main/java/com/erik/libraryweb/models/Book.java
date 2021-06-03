@@ -1,14 +1,23 @@
 package com.erik.libraryweb.models;
 
+import javax.persistence.*;
 import java.util.HashSet;
 import java.util.Set;
 
+@Entity
 public class Book {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String isbn;
+
+    @ManyToOne
     private Publisher publisher;
+
+    @ManyToMany
+    @JoinTable(name = "author_books", joinColumns = @JoinColumn(name = "book_id"), inverseJoinColumns = @JoinColumn(name ="author_id"))
     private Set<Author> authors = new HashSet<>();
     // TODO
     // How many Books are with this same title and Author
