@@ -1,5 +1,6 @@
 package com.erik.libraryweb.models;
 
+import java.time.LocalDate;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -15,6 +16,8 @@ public class Student {
     private String studentPLZ;
     private String studentEmail;
     private String studentTel;
+    private LocalDate studentDob;
+    private Integer studentAge;
     private Integer countOfBooks;
 
     Set<Book> books = new HashSet<>();
@@ -22,7 +25,7 @@ public class Student {
     public Student() {
     }
 
-    public Student(Long id, String studentFirstName, String studentLastName, String studentAddress, String studentStreet, String studentCity, String studentPLZ, String studentEmail, String studentTel) {
+    public Student(Long id, String studentFirstName, String studentLastName, String studentAddress, String studentStreet, String studentCity, String studentPLZ, String studentEmail, String studentTel, LocalDate studentDob) {
         this.id = id;
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
@@ -32,9 +35,10 @@ public class Student {
         this.studentPLZ = studentPLZ;
         this.studentEmail = studentEmail;
         this.studentTel = studentTel;
+        this.studentDob = studentDob;
     }
 
-    public Student(String studentFirstName, String studentLastName, String studentAddress, String studentStreet, String studentCity, String studentPLZ, String studentEmail, String studentTel) {
+    public Student(String studentFirstName, String studentLastName, String studentAddress, String studentStreet, String studentCity, String studentPLZ, String studentEmail, String studentTel, LocalDate studentDob) {
         this.studentFirstName = studentFirstName;
         this.studentLastName = studentLastName;
         this.studentAddress = studentAddress;
@@ -43,6 +47,7 @@ public class Student {
         this.studentPLZ = studentPLZ;
         this.studentEmail = studentEmail;
         this.studentTel = studentTel;
+        this.studentDob = studentDob;
     }
 
     public Long getId() {
@@ -163,5 +168,13 @@ public class Student {
     @Override
     public int hashCode() {
         return id != null ? id.hashCode() : 0;
+    }
+
+    public LocalDate getStudentDob() {
+        return studentDob;
+    }
+
+    public void setStudentDob(LocalDate studentDob) {
+        this.studentDob = studentDob;
     }
 }

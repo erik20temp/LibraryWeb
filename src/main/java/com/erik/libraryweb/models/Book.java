@@ -10,6 +10,7 @@ public class Book {
     private String isbn;
 
     private Publisher publisher;
+    private Student student;
 
     private Set<Author> authors = new HashSet<>();
 
@@ -57,6 +58,14 @@ public class Book {
 
     public void setPublisher(Publisher publisher) {
         this.publisher = publisher;
+    }
+
+    public Student getStudent() {
+        return student;
+    }
+
+    public void setStudent(Student student) {
+        this.student = student;
     }
 
     public Set<Author> getAuthors() {
