@@ -9,6 +9,8 @@ public class Book {
     private String title;
     private String isbn;
 
+    private Publisher publisher;
+
     private Set<Author> authors = new HashSet<>();
 
     public Book() {
@@ -49,6 +51,14 @@ public class Book {
         this.isbn = isbn;
     }
 
+    public Publisher getPublisher() {
+        return publisher;
+    }
+
+    public void setPublisher(Publisher publisher) {
+        this.publisher = publisher;
+    }
+
     public Set<Author> getAuthors() {
         return authors;
     }
@@ -69,6 +79,14 @@ public class Book {
 
     @Override
     public boolean equals(Object o) {
+
+
+
+
+
+
+
+
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
 
