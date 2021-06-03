@@ -1,6 +1,7 @@
 package com.erik.libraryweb.models;
 
 import java.time.LocalDate;
+import java.time.Period;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -130,6 +131,18 @@ public class Student {
         this.countOfBooks = countOfBooks;
     }
 
+    public LocalDate getStudentDob() {
+        return studentDob;
+    }
+
+    public void setStudentDob(LocalDate studentDob) {
+        this.studentDob = studentDob;
+    }
+
+    public Integer getStudentAge() {
+        return Period.between(this.studentDob, LocalDate.now()).getYears();
+    }
+
     public Set<Book> getBooks() {
         return books;
     }
@@ -150,6 +163,8 @@ public class Student {
                 ", studentPLZ='" + studentPLZ + '\'' +
                 ", studentEmail='" + studentEmail + '\'' +
                 ", studentTel='" + studentTel + '\'' +
+                ", studentDob='" + studentDob + '\'' +
+                ", studentAge='" + studentAge + '\'' +
                 ", countOfBooks=" + countOfBooks +
                 ", books=" + books +
                 '}';
@@ -170,11 +185,6 @@ public class Student {
         return id != null ? id.hashCode() : 0;
     }
 
-    public LocalDate getStudentDob() {
-        return studentDob;
-    }
 
-    public void setStudentDob(LocalDate studentDob) {
-        this.studentDob = studentDob;
-    }
+
 }
