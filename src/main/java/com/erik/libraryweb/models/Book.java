@@ -8,11 +8,24 @@ public class Book {
     private Long id;
     private String title;
     private String isbn;
-
     private Publisher publisher;
-    private Student student;
-
     private Set<Author> authors = new HashSet<>();
+    // TODO
+    // How many Books are with this same title and Author
+       /*
+          count from Database
+       */
+    // How many books with this same title and Author left to rent
+       /*
+          calculate count from Database - how many Students has this book
+        */
+    // Which Students has this Book
+       /*
+          display Students that have this book with
+          when should be returned and
+          how many days left
+       */
+    // How many Books in library
 
     public Book() {
     }
@@ -60,13 +73,6 @@ public class Book {
         this.publisher = publisher;
     }
 
-    public Student getStudent() {
-        return student;
-    }
-
-    public void setStudent(Student student) {
-        this.student = student;
-    }
 
     public Set<Author> getAuthors() {
         return authors;

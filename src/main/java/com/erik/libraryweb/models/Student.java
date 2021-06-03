@@ -2,8 +2,6 @@ package com.erik.libraryweb.models;
 
 import java.time.LocalDate;
 import java.time.Period;
-import java.util.HashSet;
-import java.util.Set;
 
 public class Student {
 
@@ -18,10 +16,22 @@ public class Student {
     private String studentEmail;
     private String studentTel;
     private LocalDate studentDob;
-    private Integer studentAge;
+    private Integer studentAge; // Age is calculated in getAge
     private Integer countOfBooks;
 
-    Set<Book> books = new HashSet<>();
+    // How many Books has a Student
+    /*
+        count Books from DB
+    */
+    // What a Books has a Student
+    /*
+        display students Book with
+        when he rent a Book
+        What is a date of return
+        How many days left
+        
+     */
+
 
     public Student() {
     }
@@ -143,14 +153,6 @@ public class Student {
         return Period.between(this.studentDob, LocalDate.now()).getYears();
     }
 
-    public Set<Book> getBooks() {
-        return books;
-    }
-
-    public void setBooks(Set<Book> books) {
-        this.books = books;
-    }
-
     @Override
     public String toString() {
         return "Student{" +
@@ -166,7 +168,6 @@ public class Student {
                 ", studentDob='" + studentDob + '\'' +
                 ", studentAge='" + studentAge + '\'' +
                 ", countOfBooks=" + countOfBooks +
-                ", books=" + books +
                 '}';
     }
 
