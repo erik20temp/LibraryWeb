@@ -11,13 +11,11 @@
             <th>ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Book Title</th>
         </tr>
         <tr th:each="author : ${authors}">
             <td th:text="${author.id}"></td>
             <td th:text="${author.authorFirstName}"></td>
             <td th:text="${author.authorLastName}"></td>
-
         </tr>
     </table>
 
