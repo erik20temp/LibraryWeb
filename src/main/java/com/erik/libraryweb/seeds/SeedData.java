@@ -68,6 +68,7 @@ public class SeedData implements CommandLineRunner {
 
         System.out.println("Number of Authors: " + authorRepository.count());
         System.out.println("Number of Books: " + bookRepository.count());
+        System.out.println("Number of Publishers: " + publisherRepository.count());
         System.out.println("Publisher Number of Books: " + publisher.getBooks().size());
 
     }
